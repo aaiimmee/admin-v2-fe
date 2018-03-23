@@ -1,0 +1,15 @@
+{
+  "name": "admin-v2-fe",
+  "version": "1.0.0",
+  "description": "第二版v2-fe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitee.com:aaiimmee/admin-v2-fe.git"
+  },
+  "author": "",
+  "license": "ISC"
+}
