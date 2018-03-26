@@ -1,25 +1,31 @@
-/*console.log('hello,webpack');*/
-/*
-let a=123;
-let test=(value)=>{
-	return value*2;
-};
-test(a);*/
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { HashRouter as Router,Switch,Route,Redirect,Link} from 'react-router-dom';
 
-import	'font-awesome/css/font-awesome.min.css'
+/*import Layout from 'component/layout/index.jsx';*/
+//页面
+import Home from 'page/home/index.jsx';
 
-import './index.css';
-import './index.scss';
-/*import './1.jpg'*/
 
+class App extends React.Component{
+	constructor(props){
+		super(props);
+	}
+	render(){
+		return(
+			<Router>
+
+                    <Switch>
+                        <Route exact path="/" component={Home}/>
+                        <Redirect from='*' to='/'/>
+                    </Switch>
+
+			</Router>
+		);
+	}
+}
 ReactDOM.render(
-	<div>
-		<i className="fa fa-address-book"></i>
-		<h1>HELLO,world!</h1>,
-	</div>,
-	
+	<App/>,
 	document.getElementById('app')
 );
