@@ -12,7 +12,9 @@ module.exports={
 	resolve:{
 		alias:{
 			page:path.resolve(__dirname,'src/page'),
-            component:path.resolve(__dirname,'src/component')
+            component:path.resolve(__dirname,'src/component'),
+            util:path.resolve(__dirname,'src/util'),
+            service:path.resolve(__dirname,'src/service')
 		}
 	},
 	module:{
@@ -90,6 +92,19 @@ module.exports={
 		port:8086,
 		historyApiFallback:{
 			index:'/dist/index.html'
+		},
+		//服务器处理
+		proxy:{
+			'/manage':{
+				target:'http://admintest.happymmall.com',
+				//为true时默认从target上去找数据  不然就会从localhost:8086去找
+				changeOrigin:true
+			},
+            '/user/logout.do':{
+                target:'http://admintest.happymmall.com',
+                //为true时默认从target上去找数据  不然就会从localhost:8086去找
+                changeOrigin:true
+            }
 		}
 	}
 };
